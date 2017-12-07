@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="fillo-1.16">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/fillo-1.16.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
