@@ -9,9 +9,15 @@ public class Extractor_SQL {
     Connection connexion = null;
 
     public Extractor_SQL(){
-        this.url = "jdbc:mysql://localhost/projetidcm2";
-        this.user = "root";
-        this.password = "MDP2Paris";
+        //
+        // AJOUTEZ LES INFORMATIONS DE VOTRE BASE DE DONNEES MYSQL ICI
+        //
+        this.url = "";
+        this.user = "";
+        this.password = "";
+        //
+        // AJOUTEZ LES INFORMATIONS DE VOTRE BASE DE DONNEES MYSQL ICI
+        //
     }
     public boolean connexion_BDD(){
         try {
