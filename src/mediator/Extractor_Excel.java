@@ -12,6 +12,17 @@ public class Extractor_Excel {
         this.filepath = filepath;
     }
 
+    public int[] requete_1(){
+        return null;
+    }
+
+    public int requete_2(){
+        return 0;
+    }
+
+    public int[] requete_3(){
+        return null;
+    }
 
     /*
     //Requète : Afficher pour chaque enseignant, son nombre total d’heures assurées

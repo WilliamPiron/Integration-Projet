@@ -42,11 +42,11 @@ public class Extractor_SQL {
             }
     }
 
-    public int requete_1(){
+    public int[] requete_1(){
         /* Le nombre d'heures n'existe pas dans cette source
         Donc on ne peut pas faire de requête dans la BDD
          */
-        return 0;
+        return null;
     }
 
     public int requete_2(){
