@@ -42,6 +42,7 @@ public class Extractor_SQL {
             }
     }
 
+    //Requète : Afficher pour chaque enseignant, son nombre total d’heures assurées
     public int requete_1(){
         /* Le nombre d'heures n'existe pas dans cette source
         Donc on ne peut pas faire de requête dans la BDD
@@ -49,6 +50,7 @@ public class Extractor_SQL {
         return 0;
     }
 
+    //Requète : Nombre d'étudiants dont la provenance est 'France'
     public int requete_2(){
         try {
             Statement statement = connexion.createStatement();
@@ -59,6 +61,7 @@ public class Extractor_SQL {
         }
     }
 
+    //Requète :Afficher le nombre de cours par Type (CM, TD ou TP)
     public int[] requete_3(){
         int res[] = new int[3];
         try {
