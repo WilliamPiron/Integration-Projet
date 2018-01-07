@@ -26,8 +26,6 @@ public class Extractor_XML {
     public void connect_to_file (String filepath) throws FileNotFoundException, SAXException, IOException, ParserConfigurationException {
         builderFactory = DocumentBuilderFactory.newInstance();
         doc = builderFactory.newDocumentBuilder().parse(new FileInputStream(filepath));
-        //Node node ;
-        //Element E, E_1;
 
     }
 

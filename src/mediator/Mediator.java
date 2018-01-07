@@ -4,15 +4,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Mediator {
-    static void main(String[] args) {
 
+    private String excelpath;
+    private String xmlpath;
+
+    public Mediator(String excelpath, String xmlpath) {
+        this.excelpath = excelpath;
+        this.xmlpath = xmlpath;
+    }
+
+    public void executeMediator(){
         /* Excel */
-        String filepath_excel = "src\\datasources\\donneesExcel.xls";
-        Extractor_Excel e_excel = new Extractor_Excel(filepath_excel);
+        Extractor_Excel e_excel = new Extractor_Excel(excelpath);
         Boolean connexion_excel = null;
-        int[] r_excel_r1 = null;
+        String[] r_excel_r1 = null;
         int r_excel_r2 = 0;
-        int [] r_excel_r3 = null;
+        String[] r_excel_r3 = null;
 
         /* SQL */
         Extractor_SQL e_sql = new Extractor_SQL();
@@ -22,8 +29,7 @@ public class Mediator {
         int [] r_sql_r3 = null;
 
         /* XML */
-        String filepath_XML = "src\\datasources\\donneesXML.xml";
-        Extractor_XML e_xml = new Extractor_XML(filepath_XML);
+        Extractor_XML e_xml = new Extractor_XML(xmlpath);
         Boolean connexion_xml = null;
         int[] r_xml_r1 = null;
         int r_xml_r2 = 0;
@@ -84,9 +90,9 @@ public class Mediator {
 
         /* Requete 3 */
         if( r_excel_r3 != null){
-            r_requete3[0] += r_excel_r3[0];
-            r_requete3[1] += r_excel_r3[1];
-            r_requete3[2] += r_excel_r3[2];
+            r_requete3[0] += Integer.parseInt(r_excel_r3[1]);
+            r_requete3[1] += Integer.parseInt(r_excel_r3[3]);
+            r_requete3[2] += Integer.parseInt(r_excel_r3[5]);
         }
         if (r_sql_r3 != null){
             r_requete3[0] += r_sql_r3[0];
@@ -107,4 +113,19 @@ public class Mediator {
 
     }
 
+    public String getExcelpath() {
+        return excelpath;
+    }
+
+    public void setExcelpath(String excelpath) {
+        this.excelpath = excelpath;
+    }
+
+    public String getXmlpath() {
+        return xmlpath;
+    }
+
+    public void setXmlpath(String xmlpath) {
+        this.xmlpath = xmlpath;
+    }
 }
