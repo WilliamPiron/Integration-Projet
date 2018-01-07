@@ -2,31 +2,31 @@ package model;
 
 public class Inscription {
 
-    private String id_etudiant;
-    private String id_cours;
+    private int id_etudiant;
+    private int id_cours;
     private String annee;
-    private int note;
+    private float note;
 
-    public Inscription(String id_etudiant, String id_cours, String annee, int note) {
+    public Inscription(int id_etudiant, int id_cours, String annee, int note) {
         this.id_etudiant = id_etudiant;
         this.id_cours = id_cours;
         this.annee = annee;
         this.note = note;
     }
 
-    public String getId_etudiant() {
+    public int getId_etudiant() {
         return id_etudiant;
     }
 
-    public void setId_etudiant(String id_etudiant) {
+    public void setId_etudiant(int id_etudiant) {
         this.id_etudiant = id_etudiant;
     }
 
-    public String getId_cours() {
+    public int getId_cours() {
         return id_cours;
     }
 
-    public void setId_cours(String id_cours) {
+    public void setId_cours(int id_cours) {
         this.id_cours = id_cours;
     }
 
@@ -38,11 +38,23 @@ public class Inscription {
         this.annee = annee;
     }
 
-    public int getNote() {
+    public float getNote() {
         return note;
     }
 
-    public void setNote(int note) {
+    public void setNote(float note) {
         this.note = note;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Inscription{");
+        sb.append("\n");
+        sb.append("id_etudiant=").append(id_etudiant).append("\n");
+        sb.append("id_cours=").append(id_cours).append("\n");
+        sb.append("annee='").append(annee).append('\'').append("\n");
+        sb.append("note=").append(note).append("\n");
+        sb.append('}');
+        return sb.toString();
     }
 }

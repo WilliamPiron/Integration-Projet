@@ -2,17 +2,21 @@ package model;
 
 public class Etudiant {
 
-    private String id;
+    private int id;
     private String nom;
     private String prenom;
     private String provenance;
     private String formationPrecedente;
     private String paysFormationprecedente;
     private String anneeDebut;
-    private String age;
+    private int age;
     private String niveauInsertion;
 
-    public Etudiant(String id, String nom, String prenom, String provenance, String formationPrecedente, String paysFormationprecedente, String anneeDebut, String age, String niveauInsertion) {
+    public Etudiant() {
+    }
+
+    public Etudiant(int id, String nom, String prenom, String provenance, String formationPrecedente,
+                    String paysFormationprecedente, String anneeDebut, int age, String niveauInsertion) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -24,11 +28,32 @@ public class Etudiant {
         this.niveauInsertion = niveauInsertion;
     }
 
-    public String getId() {
+    public Etudiant(int id, String nom, String prenom, String provenance, String formationPrecedente,
+                    String niveauInsertion) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.provenance = provenance;
+        this.formationPrecedente = formationPrecedente;
+        this.niveauInsertion = niveauInsertion;
+    }
+
+    public Etudiant(int id, String nom, String provenance, String formationPrecedente,
+                    String paysFormationprecedente, String anneeDebut, String niveauInsertion) {
+        this.id = id;
+        this.nom = nom;
+        this.provenance = provenance;
+        this.formationPrecedente = formationPrecedente;
+        this.paysFormationprecedente = paysFormationprecedente;
+        this.anneeDebut = anneeDebut;
+        this.niveauInsertion = niveauInsertion;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -80,11 +105,11 @@ public class Etudiant {
         this.anneeDebut = anneeDebut;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -94,5 +119,16 @@ public class Etudiant {
 
     public void setNiveauInsertion(String niveauInsertion) {
         this.niveauInsertion = niveauInsertion;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder().append("Etudiant{");
+        sb.append("\n");
+        sb.append("id=").append(id).append("\n");
+        sb.append("prenom=").append(prenom).append("\n");
+        sb.append("nom=").append(nom).append("\n");
+        sb.append("}");
+        return sb.toString();
     }
 }

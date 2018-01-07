@@ -2,31 +2,40 @@ package model;
 
 public class Enseigne {
 
-    private String id_enseignant;
-    private String id_cours;
+    private int id_enseignant;
+    private int id_cours;
     private String annee;
     private int heures;
 
-    public Enseigne(String id_enseignant, String id_cours, String annee, int heures) {
+    public Enseigne(int id_enseignant, int id_cours, String annee, int heures) {
         this.id_enseignant = id_enseignant;
         this.id_cours = id_cours;
         this.annee = annee;
         this.heures = heures;
     }
 
-    public String getId_enseignant() {
+    public Enseigne() {
+    }
+
+    public Enseigne(int id_enseignant, int id_cours, String annee) {
+        this.id_enseignant = id_enseignant;
+        this.id_cours = id_cours;
+        this.annee = annee;
+    }
+
+    public int getId_enseignant() {
         return id_enseignant;
     }
 
-    public void setId_enseignant(String id_enseignant) {
+    public void setId_enseignant(int id_enseignant) {
         this.id_enseignant = id_enseignant;
     }
 
-    public String getId_cours() {
+    public int getId_cours() {
         return id_cours;
     }
 
-    public void setId_cours(String id_cours) {
+    public void setId_cours(int id_cours) {
         this.id_cours = id_cours;
     }
 
@@ -44,5 +53,17 @@ public class Enseigne {
 
     public void setHeures(int heures) {
         this.heures = heures;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Enseigne{");
+        sb.append("\n");
+        sb.append("id_enseignant=").append(id_enseignant).append("\n");
+        sb.append("id_cours=").append(id_cours).append("\n");
+        sb.append("annee='").append(annee).append('\'').append("\n");
+        sb.append("heures=").append(heures).append("\n");
+        sb.append('}');
+        return sb.toString();
     }
 }
