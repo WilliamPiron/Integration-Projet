@@ -1,4 +1,4 @@
-package main;
+package mediator;
 
 import com.codoid.products.exception.FilloException;
 import com.codoid.products.fillo.Connection;
@@ -12,8 +12,10 @@ public class Extractor_Excel {
         this.filepath = filepath;
     }
 
+
+    /*
     //Requète : Afficher pour chaque enseignant, son nombre total d’heures assurées
-    public String request_1(){
+    public String requete_ensignant_total_heure(){
         String result = "";
         // Dans le fichier Excel, le nombre d'heures n'existe pas, la query est vide
         String query = "";
@@ -34,12 +36,13 @@ public class Extractor_Excel {
             e.printStackTrace();
             return null;
         }
-
+        if (result == "")
+            result = "0";
         return result;
     }
 
     //Requète : Nombre d'étudiants dont la provenance est 'France'
-    public String request_2(){
+    public String requete_nb_etudiant_France(){
         String result = "";
         String query = "";
         Fillo fillo = new Fillo();
@@ -48,10 +51,10 @@ public class Extractor_Excel {
 
         try {
             connect = fillo.getConnection(filepath);
-            query = "Select Count(*) From 20006, 20007 Where Provenance='France'";
+            query = "Select Count(*) From 2006, 2007 Where Provenance='France'";
             record = connect.executeQuery(query);
             while(record.next()) {
-                result = result + " " + record.getField("Details");
+                result = record.getField("Details");
             }
             record.close();
             connect.close();
@@ -59,22 +62,37 @@ public class Extractor_Excel {
             e.printStackTrace();
             return null;
         }
-
+        if (result == "")
+            result = "0";
         return result;
     }
 
     //Requète :Afficher le nombre de cours par Type (CM, TD ou TP)
-    public String request_3(){
+    public String requete_nb_cours_type(){
         String result = "";
-        String query = "";
+        String queryCM = "";
+        String queryTD = "";
+        String queryTP = "";
         Fillo fillo = new Fillo();
         Connection connect;
         Recordset record;
 
         try {
             connect = fillo.getConnection(filepath);
-            query = "";
-            record = connect.executeQuery(query);
+            queryCM = "Select Type_Cours, Count(Distinct ID_Cours) From 2006, 2007 Where Type_Cours='CM'";
+            record = connect.executeQuery(queryCM);
+            while(record.next()) {
+                result = result + " " + record.getField("Details");
+            }
+            record.close();
+            queryTD = "Select Type_Cours, Count(Distinct ID_Cours) From 2006, 2007 Where Type_Cours='TD'";
+            record = connect.executeQuery(queryTD);
+            while(record.next()) {
+                result = result + " " + record.getField("Details");
+            }
+            record.close();
+            queryTP = "Select Type_Cours, Count(Distinct ID_Cours) From 2006, 2007 Where Type_Cours='TP'";
+            record = connect.executeQuery(queryTP);
             while(record.next()) {
                 result = result + " " + record.getField("Details");
             }
@@ -87,4 +105,6 @@ public class Extractor_Excel {
 
         return result;
     }
+
+    */
 }
