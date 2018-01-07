@@ -2,23 +2,28 @@ package mediator;
 
 public class Mediator {
     static void main(String[] args) {
+
         /* Excel */
-        String filepath = null;
-        Extractor_Excel e_excel = new Extractor_Excel(filepath);
+        String filepath_excel = "src\\datasources\\donneesExcel.xls";
+        Extractor_Excel e_excel = new Extractor_Excel(filepath_excel);
         Boolean connexion_excel = null;
-        int [] r_excel_r1 = null;
+        int r_excel_r1 = 0;
         int r_excel_r2 = 0;
         int [] r_excel_r3 = null;
+
         /* SQL */
         Extractor_SQL e_sql = new Extractor_SQL();
         Boolean connexion_sql = null;
         int r_sql_r1 = 0;
         int r_sql_r2 = 0;
         int [] r_sql_r3 = null;
+
         /* XML */
-        Extractor_XML e_xml = new Extractor_XML();
+        String filepath_XML = "src\\datasources\\donneesXML.xml";
+        String datastructure_XML = "src\\datasources\\shemaXML.xml";
+        Extractor_XML e_xml = new Extractor_XML(filepath_XML,datastructure_XML);
         Boolean connexion_xml = null;
-        int [] r_xml_r1 = null;
+        int r_xml_r1 = 0;
         int r_xml_r2 = 0;
         int [] r_xml_r3 = null;
         /* RES */
@@ -60,6 +65,8 @@ public class Mediator {
         r_xml_r3 = e_xml.requete_3();
         /* Déconecter du fichier*/
 
+
+        /* MEDIATEUR */
         /* Calcul des résultats */
         System.out.println("Calcul du résultats des requêtes en cours.");
 

@@ -5,15 +5,29 @@ import com.codoid.products.fillo.Connection;
 import com.codoid.products.fillo.Fillo;
 import com.codoid.products.fillo.Recordset;
 
-public class Extractor_Excel {
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.LinkedHashSet;
+import java.util.Objects;
+import java.util.Set;
+
+
+public class Extractor_Excel{
     private String filepath;
+
 
     public Extractor_Excel(String filepath) {
         this.filepath = filepath;
     }
 
-    public int[] requete_1(){
-        return null;
+
+    public int requete_1(){
+        return 0;
     }
 
     public int requete_2(){
@@ -23,6 +37,13 @@ public class Extractor_Excel {
     public int[] requete_3(){
         return null;
     }
+
+
+
+
+
+
+
 
     /*
     //Requète : Afficher pour chaque enseignant, son nombre total d’heures assurées
