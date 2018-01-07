@@ -7,7 +7,7 @@ Lien du projet : https://github.com/WilliamPiron/Integration-Projet.git
 
 # Lancement du projet 
 
-Importez le projet dans IntelliJ, créez la base de données "projetidcm2" avec MySQL/PHPMyAdmin, puis importez les tables avec le fichier "projetidcm2.sql" situé dans les sources du projet, package "datasources".
+Importez le projet dans IntelliJ, créez la base de données "projetidcm2" avec MySQL/PHPMyAdmin, puis importez les tables avec le fichier "projetidcm2.sql" situé dans les sources du projet, package "datasources". Editez ensuite les variables indiquées d'un commentaire dans le fichier "Extractor_SQL.java" avec le lien, l'identifiant et le mot de passe de votre base MySQL contenant la table ainsi importée.
 
 # Requêtes implémentées 
 
