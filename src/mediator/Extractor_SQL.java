@@ -43,11 +43,11 @@ public class Extractor_SQL {
     }
 
     //Requète : Afficher pour chaque enseignant, son nombre total d’heures assurées
-    public int requete_1(){
+    public int[] requete_1(){
         /* Le nombre d'heures n'existe pas dans cette source
         Donc on ne peut pas faire de requête dans la BDD
          */
-        return 0;
+        return null;
     }
 
     //Requète : Nombre d'étudiants dont la provenance est 'France'

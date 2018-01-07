@@ -1,5 +1,8 @@
 package mediator;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Mediator {
     static void main(String[] args) {
 
@@ -7,29 +10,28 @@ public class Mediator {
         String filepath_excel = "src\\datasources\\donneesExcel.xls";
         Extractor_Excel e_excel = new Extractor_Excel(filepath_excel);
         Boolean connexion_excel = null;
-        int r_excel_r1 = 0;
+        int[] r_excel_r1 = null;
         int r_excel_r2 = 0;
         int [] r_excel_r3 = null;
 
         /* SQL */
         Extractor_SQL e_sql = new Extractor_SQL();
         Boolean connexion_sql = null;
-        int r_sql_r1 = 0;
+        int[] r_sql_r1 = null;
         int r_sql_r2 = 0;
         int [] r_sql_r3 = null;
 
         /* XML */
         String filepath_XML = "src\\datasources\\donneesXML.xml";
-        String datastructure_XML = "src\\datasources\\shemaXML.xml";
-        Extractor_XML e_xml = new Extractor_XML(filepath_XML,datastructure_XML);
+        Extractor_XML e_xml = new Extractor_XML(filepath_XML);
         Boolean connexion_xml = null;
-        int r_xml_r1 = 0;
+        int[] r_xml_r1 = null;
         int r_xml_r2 = 0;
-        int [] r_xml_r3 = null;
+        Map<String, Integer> r_xml_r3 = new HashMap<>();
         /* RES */
         int [] r_requete1 = null;
         int r_requete2 = 0;
-        int r_requete3[] = {0,0,0};
+        int[] r_requete3 = {0,0,0};
 
         /* EXCEL */
 
@@ -92,9 +94,9 @@ public class Mediator {
             r_requete3[2] += r_sql_r3[2];
         }
         if( r_xml_r3 != null){
-            r_requete3[0] += r_xml_r3[0];
-            r_requete3[1] += r_xml_r3[1];
-            r_requete3[2] += r_xml_r3[2];
+            r_requete3[0] += r_xml_r3.get("CM");
+            r_requete3[1] += r_xml_r3.get("TD");
+            r_requete3[2] += r_xml_r3.get("TP");
         }
         System.out.println("Le nombre de cours de type CM : "+r_requete3[0]);
         System.out.println("Le nombre de cours de type TD : "+r_requete3[1]);

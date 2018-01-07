@@ -26,8 +26,8 @@ public class Extractor_Excel{
     }
 
 
-    public int requete_1(){
-        return 0;
+    public int[] requete_1(){
+        return null;
     }
 
     public int requete_2(){
@@ -47,7 +47,7 @@ public class Extractor_Excel{
 
     /*
     //Requète : Afficher pour chaque enseignant, son nombre total d’heures assurées
-    public String requete_ensignant_total_heure(){
+    public String[] requete_ensignant_total_heure(){
         String result = "";
         // Dans le fichier Excel, le nombre d'heures n'existe pas, la query est vide
         String query = "";
