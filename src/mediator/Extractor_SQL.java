@@ -47,7 +47,7 @@ public class Extractor_SQL {
         /* Le nombre d'heures n'existe pas dans cette source
         Donc on ne peut pas faire de requête dans la BDD
          */
-        return null;
+        return 0;
     }
 
     //Requète : Nombre d'étudiants dont la provenance est 'France'
